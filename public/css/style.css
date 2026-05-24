@@ -59,7 +59,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: linear-gradient(rgba(11, 13, 23, 0.55), rgba(11, 13, 23, 0.8)), url("/public/img/chile-night.jpg");
+    background-image: linear-gradient(rgba(11, 13, 23, 0.55), rgba(11, 13, 23, 0.8)), url("../img/chile-night.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -98,7 +98,7 @@ nav a:hover {
     margin-top: 60px;
 }
 .page-hero.team-hero {
-    background-image: linear-gradient(rgba(11, 13, 23, 0.5), rgba(11, 13, 23, 0.85)), url("/public/img/earth-from-leo.jpg");
+    background-image: linear-gradient(rgba(11, 13, 23, 0.5), rgba(11, 13, 23, 0.85)), url("../img/earth-from-leo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
