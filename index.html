@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyxsat</title>
+    <title>NyxSat</title>
     <link rel="stylesheet" href="/public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">🚀 Nyxsat</div>
+        <div class="logo">NyxSat</div>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
@@ -18,41 +18,65 @@
         <nav>
             <ul>
                 <li><a href="/index.html">Home</a></li>
-                <li><a href="/public/pages/payload.html">Payload</a></li>
+                <li><a href="#payload">Payload</a></li>
                 <li><a href="/public/pages/team.html">Team</a></li>
-                <li><a href="/public/pages/communication.html">Radioamateurs</a></li>
+	                <li><a href="/public/pages/communication.html">Communications & Radioamateurs</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Exploring the limits of life in space</h1>
-                <p>A miniature laboratory in low Earth orbit to test biomolecular resistance.</p>
-                <a href="#mission" class="btn">Discover the Mission</a>
+                <h1>Monitoring light pollution from orbit</h1>
+                <p>An educational 3U CubeSat project developed jointly by Sapienza University of Rome’s School of Aerospace Engineering and the Chilean Air Force (FACH).</p>
+                <a href="#mission" class="btn">Discover NyxSat</a>
             </div>
         </section>
         <section id="mission" class="features">
             <h2>Main Objectives</h2>
             <div class="cards">
                 <div class="card">
-                    <h3>🔬 Astrobiological Research</h3>
-                    <p>Testing the stability of biomolecules in an extreme space environment for extended periods.</p>
+                    <h3>Light Pollution Monitoring</h3>
+                    <p>Collecting optical data to help quantify artificial night-sky brightness from space.</p>
                 </div>
                 <div class="card">
-                    <h3>🛰️ CubeSat Technology</h3>
-                    <p>Demonstrating the capabilities of nanosatellites for advanced and miniaturized scientific experiments.</p>
+                    <h3>Nanosatellite Platform</h3>
+                    <p>A compact spacecraft (~30 × 10 cm class) designed for rapid development and in-orbit environmental monitoring.</p>
                 </div>
                 <div class="card">
-                    <h3>🌍 Earth Orbit</h3>
-                    <p>Operating in the inner Van Allen belt to maximize exposure to solar radiation.</p>
+                    <h3>Innovative Power</h3>
+                    <p>Featuring a deployable solar panel on a flexible substrate based on novel photovoltaic technologies.</p>
+                </div>
+                <div class="card">
+                    <h3>Amateur Radio</h3>
+                    <p>Providing an UHF digipeater for radio amateurs, plus an innovative LoRa-based digipeater experiment.</p>
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Nyxsat Project - SIA Sapienza - @spacesapienza</p>
-    </footer>
+        <section id="payload" class="content-section">
+            <h2>Payload</h2>
+            <p>NyxSat carries a compact optical instrument dedicated to monitoring light pollution from orbit over targeted regions.</p>
+
+	            <figure class="payload-figure">
+	                <img src="/public/img/chile-night.jpg" alt="Chile (Santiago area) at night photographed from orbit, with city lights visible.">
+	            </figure>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Optical Sensor</h3>
+                    <p>A miniaturized optical payload designed to measure night-sky brightness.</p>
+                </div>
+                <div class="card">
+                    <h3>Targeted Observations</h3>
+                    <p>Focused acquisition over selected areas to support light-pollution assessment.</p>
+                </div>
+            </div>
+
+	        </section>
+	    </main>
+	    <footer>
+	        <p>© Sapienza Università di Roma - Piazzale Aldo Moro 5, 00185 Roma - (+39) 06 49911 - C.F.: 80209930587 - P. Iva: 02133771002</p>
+	    </footer>
     <script src="/public/js/main.js"></script>
 </body>
 </html>

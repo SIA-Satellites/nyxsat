@@ -3,13 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radioamateurs - Nyxsat</title>
+	    <title>Communications & Radioamateurs - NyxSat</title>
     <link rel="stylesheet" href="/public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .radio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            margin-top: 24px;
+        }
+
+        .radio-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .radio-card h3 {
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+
+        .radio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            font-size: 0.95rem;
+        }
+
+        .radio-table th,
+        .radio-table td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 10px 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .radio-table th {
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        .note-box {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .warning-box {
+            margin: 18px 0;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 210, 90, 0.55);
+            background: rgba(255, 210, 90, 0.12);
+            font-weight: 700;
+        }
+
+        code {
+            padding: 2px 6px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        @media (max-width: 900px) {
+            .radio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">🚀 Nyxsat</div>
+        <div class="logo">NyxSat</div>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
@@ -18,41 +86,219 @@
         <nav>
             <ul>
                 <li><a href="/index.html">Home</a></li>
-                <li><a href="/public/pages/payload.html">Payload</a></li>
+                <li><a href="/index.html#payload">Payload</a></li>
                 <li><a href="/public/pages/team.html">Team</a></li>
-                <li><a href="/public/pages/communication.html">Radioamateurs</a></li>
+	                <li><a href="/public/pages/communication.html">Communications & Radioamateurs</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="page-hero">
             <div class="hero-content">
                 <h1>Communications & Radioamateurs</h1>
-                <p>Help us collect telemetry data and become part of the mission.</p>
+                <p>Help us collect telemetry data and become part of the NyxSat mission.</p>
             </div>
         </section>
+
         <section class="content-section">
-            <h2>Track Nyxsat</h2>
-            <p>The Nyxsat team actively encourages the global amateur radio community to listen out for the satellite's telemetry beacon. Your reports are incredibly valuable to us, especially during the early orbit phase.</p>
-            
-            <h2>Frequencies & Modulation</h2>
-            <ul>
-                <li style="margin-bottom: 10px;"><strong>Downlink Frequency:</strong> 437.425 MHz (UHF)</li>
-                <li style="margin-bottom: 10px;"><strong>Beacon:</strong> 9600 bps GMSK</li>
-                <li style="margin-bottom: 10px;"><strong>Protocol:</strong> AX.25 UI frames</li>
-                <li style="margin-bottom: 10px;"><strong>Callsign:</strong> IR0AB</li>
-            </ul>
+            <h2>Track NyxSat</h2>
+            <p>
+                The NyxSat team actively encourages the global amateur radio community to listen
+                for the satellite telemetry beacon and to experiment with the amateur radio payloads.
+                Reception reports will be especially valuable during the Launch and Early Orbit Phase.
+            </p>
+
+            <h2>Telemetry / Beacon Downlink</h2>
+            <p>
+                NyxSat transmits public, non-encrypted telemetry through its UHF and LoRa downlinks.
+                Radio amateurs are encouraged to receive and report valid telemetry packets.
+            </p>
+
+            <div class="warning-box">
+                Telemetry structure will be available soon.
+            </div>
+
+            <table class="radio-table">
+                <thead>
+                    <tr>
+                        <th>Link</th>
+                        <th>Frequency</th>
+                        <th>Modulation</th>
+                        <th>Data rate</th>
+                        <th>Format</th>
+                        <th>Bandwidth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>UHF Beacon / Telemetry<br></td>
+                        <td>435.800 MHz</td>
+                        <td>GMSK</td>
+                        <td>9600 baud</td>
+                        <td>ASM + Golay mode</td>
+                        <td>10 kHz</td>
+                    </tr>
+                    <tr>
+                        <td>LoRa Telemetry<br></td>
+                        <td>437.800 MHz</td>
+                        <td>LoRa</td>
+                        <td>250 bit/s</td>
+                        <td>AX.25</td>
+                        <td>125 kHz</td>
+                    </tr>
+                </tbody>
+            </table>
+
+			<p style="margin-top: 30px;">
+                All telemetry, modulation descriptions, protocols and formats will be publicly available.
+                Instructions and tools for decoding NyxSat telemetry and mission data will be published
+                on this page before launch.
+            </p>
+
+            <h2 style="margin-top: 40px;">S-Band Images Downlink</h2>
+            <p>
+                NyxSat will use its S-Band link to downlink optical payload images.
+                Images will be packetized and transmitted using AX.25 format.
+            </p>
+
+            <div class="warning-box">
+                Images downlink structure and decoding instructions will be available soon.
+            </div>
+
+            <table class="radio-table">
+                <thead>
+                    <tr>
+                        <th>Link</th>
+                        <th>Frequency</th>
+                        <th>Modulation</th>
+                        <th>Data rate</th>
+                        <th>Format</th>
+                        <th>Bandwidth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S-Band Images<br></td>
+                        <td>2450 MHz</td>
+                        <td>QPSK</td>
+                        <td>1 Mbps</td>
+                        <td>AX.25 packetized images</td>
+                        <td>2 MHz</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="margin-top: 40px;">NyxSat Digipeaters</h2>
+            <p>
+                NyxSat will host two amateur radio relay systems: a standard UHF digital
+                store-and-forward digipeater and an experimental LoRa-based digipeater.
+            </p>
+
+            <div class="warning-box">
+                Under construction: this section is being finalized and more information will be published shortly.
+            </div>
+
+            <div class="radio-grid">
+                <div class="radio-card">
+                    <h3>UHF Digipeater</h3>
+                    <table class="radio-table">
+                        <tbody>
+                            <tr>
+                                <th>Service</th>
+                                <td>Store-and-forward amateur digipeater</td>
+                            </tr>
+                            <tr>
+                                <th>Uplink frequency</th>
+                                <td>435.600 MHz</td>
+                            </tr>
+                            <tr>
+                                <th>Modulation</th>
+                                <td>GMSK</td>
+                            </tr>
+                            <tr>
+                                <th>Baudrate</th>
+                                <td>9600 / 1200 baud</td>
+                            </tr>
+                            <tr>
+                                <th>Protocol / format</th>
+                                <td>TBD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="radio-card">
+                    <h3>LoRa Digipeater</h3>
+                    <table class="radio-table">
+                        <tbody>
+                            <tr>
+                                <th>Service</th>
+                                <td>Experimental LoRa amateur digipeater</td>
+                            </tr>
+                            <tr>
+                                <th>Uplink frequency</th>
+                                <td>437.800 MHz</td>
+                            </tr>
+                            <tr>
+                                <th>Modulation</th>
+                                <td>LoRa</td>
+                            </tr>
+                            <tr>
+                                <th>Data rate</th>
+                                <td>250 bit/s</td>
+                            </tr>
+                            <tr>
+                                <th>Bandwidth</th>
+                                <td>125 kHz</td>
+                            </tr>
+                            <tr>
+                                <th>Spreading Factor</th>
+                                <td>TBD</td>
+                            </tr>
+                            <tr>
+                                <th>Coding Rate</th>
+                                <td>TBD</td>
+                            </tr>
+                            <tr>
+                                <th>Protocol / format</th>
+                                <td>AX.25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <h3>How the amateur payload works</h3>
+                <p>
+                    The digipeaters use a store-and-forward approach: a message received from
+                    a radio amateur is stored on board and retransmitted in the periodic beacon
+                    (typically one message per beacon). The LoRa payload provides an experimental
+                    platform for long-range, low-power amateur satellite communications.
+                </p>
+                <p>
+                    Detailed operating instructions for both digipeaters will be published before launch.
+                </p>
+            </div>
 
             <h2 style="margin-top: 40px;">QSL Cards</h2>
-            <p>We will happily send a special mission QSL card to any radio amateur who submits valid telemetry packets. Instructions for decoding the telemetry and submitting your data will be provided on this page shortly before launch.</p>
+            <p>
+                We will happily send a special mission QSL card to any radio amateur who submits valid
+                telemetry packets. Instructions for decoding telemetry and submitting reception reports
+                will be provided on this page shortly before launch.
+            </p>
+
             <div style="text-align: center; margin-top: 30px;">
                 <a href="#" class="btn">Download Telemetry Decoder (Soon)</a>
             </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2026 Nyxsat Project - SIA Sapienza - @spacesapienza</p>
-    </footer>
+
+	    <footer>
+	        <p>© Sapienza Università di Roma - Piazzale Aldo Moro 5, 00185 Roma - (+39) 06 49911 - C.F.: 80209930587 - P. Iva: 02133771002</p>
+	    </footer>
+
     <script src="/public/js/main.js"></script>
 </body>
 </html>
